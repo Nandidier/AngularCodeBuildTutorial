@@ -1,0 +1,12 @@
+version: 0.1
+
+phases:
+  build:
+    commands:
+      - echo Build started on `date`
+      - sudo apt-get update && sudo apt-get install -y ruby ruby-dev && apt-get clean && sudo gem install compass && sudo npm install && sudo npm install grunt-cli && sudo npm install bower && sudo ./node_modules/bower/bin/bower install --allow-root && sudo ./node_modules/grunt-cli/bin/grunt build
+artifacts:
+  files:
+    - ./dist/*
+    - ./dist/**/*
+    - ./dist/**/**/*
